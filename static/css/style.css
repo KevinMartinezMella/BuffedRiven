@@ -1,0 +1,69 @@
+*{
+    font-family: 'Koulen', cursive;
+}
+
+.main{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/rivendawn.jpg');
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+    padding: 20px;
+}
+nav{
+    z-index: 10;
+}
+nav li{
+    font-size: 20px;
+}
+.navbar-brand{
+    font-size: 25px !important;
+}
+.icono{
+    width: 60px;
+}
+.main-div{
+    height: 50vh;
+}
+.main-text{
+    font-size: 100px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/* Animacion Niebla */
+
+.fog-anim{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background: url('../img/nieblino.png') repeat-x;
+    background-size: 200% auto;
+    background-position: 0 bottom;
+    animation: fogAnim 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fogAnim {
+    0%{background-position: -200% bottom;}
+    100%{background-position: 0% bottom;}
+}
+
+@media (max-width: 600px) {
+    .main-div{
+        width: 100%;
+        text-align: center;
+    }
+    .main-text {
+        font-size: 50px;
+    }
+    .main{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/rivendawnresponsive2.jpg');
+    }
+}
