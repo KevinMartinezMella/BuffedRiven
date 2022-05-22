@@ -10,7 +10,7 @@
     padding: 20px;
 }
 .main2{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/riven_proyecto.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/riven_pulsofuego.jpg');
     height: 100vh;
     background-size: cover;
     position: relative;
@@ -69,6 +69,10 @@ nav li{
     -webkit-transform: scale(1.2); /* Safari 3-8 */
     transform: scale(1.2); 
 }
+.footer{
+    position: absolute;
+    bottom: 10px;
+}
 
 /* Animacion Niebla */
 
@@ -104,6 +108,9 @@ nav li{
     }
     .main{
         background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/rivendawnresponsive2.jpg');
+    }
+    .main2{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/riven_pulso_responsive.jpg');
     }
     .main3{
         background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/riven_centinela_responsive.jpg');

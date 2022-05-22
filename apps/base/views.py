@@ -9,5 +9,5 @@ def registro(request):
 def login(request):
     return render(request, 'iniciosesion.html')
 
-def cuentas(request):
-    return render(request, 'cuentas.html')
+def gold(request):
+    return render(request, 'gold.html')
