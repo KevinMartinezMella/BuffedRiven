@@ -3,23 +3,22 @@
 {% load static %}
 
 {% block content %}
-
-<div class="main">
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="main3">
+    <nav class="navbar navbar-expand-lg navbar-dark static-top">
         <a class="navbar-brand logo-title" href="#"><i class="fas fa-gamepad"></i> Buffed-Riven</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
             <a class="nav-link" href="{% url 'index' %}">Inicio <span class="sr-only">(current)</span></a>
             </li>
-            <!-- <li class="nav-item">
-            <a class="nav-link" href="{% url 'cuentas' %}">Cuentas</a>
-            </li> -->
             <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Iniciar Sesion</a>
+                <a class="nav-link active" href="{% url 'cuentas' %}">Cuentas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Iniciar Sesion</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'registro' %}">Registrate</a>
@@ -27,18 +26,9 @@
         </ul>
         </div>
     </nav>
-    <div class="fog-anim"></div>
-    <div class="main-div">
-        <div class="text-light main-text">La cuenta que buscas <br> en <i><b>Buffed-Riven</b></i></div>
-    </div>
-</div>
-<div class="main3">
-    <div class="text-center text-light">
-        <h1>Nuestras Cuentas</h1>
-    </div>
     <div class="row text-light text-center">
         <div class="col-lg-4">
-            <div class="col-lg-12 mb-2">
+            <div class="col-lg-12">
                 <img src="{% static 'img/rangos/Unranked.png' %}" class="logo-rango" alt="">
                 <h2>Unranked</h2>
                 <p>Cuentas de Nivel 30+, nunca rankeadas, con 40.000+ de escencia azul para que tengas un nuevo comienzo en
@@ -48,7 +38,7 @@
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="col-lg-12 mb-2">
+            <div class="col-lg-12">
                 <img src="{% static 'img/rangos/Oro.png' %}" class="logo-rango" alt="">
                 <h2>Oro</h2>
                 <p>Cuentas rankeadas en elo oro, cada una es distina, alcanza tus recompensas de final de temporada seleccionando
@@ -58,7 +48,7 @@
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="col-lg-12 mb-2">
+            <div class="col-lg-12">
                 <img src="{% static 'img/rangos/Platino.png' %}" class="logo-rango" alt="">
                 <h2>Platino</h2>
                 <p>Cuentas rankeadas en elo Platino, cada una es diferente de otra, alcanza tus recompensas de final de temporada
@@ -69,5 +59,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}

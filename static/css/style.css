@@ -9,6 +9,20 @@
     position: relative;
     padding: 20px;
 }
+.main2{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/riven_proyecto.jpg');
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+    padding: 20px;
+}
+.main3{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/riven_centinel.jpg');
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+    padding: 100px 20px 20px 20px;
+}
 nav{
     z-index: 10;
 }
@@ -31,6 +45,29 @@ nav li{
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+.formulario{
+    margin-top: 120px;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.formulario-input{
+    width: 400px;
+    background-color: #123b7c76;
+    padding: 10px 20px 45px 20px;
+    border-radius: 10px;
+}
+.logo-rango{
+    transition: transform .3s;
+}
+.logo-rango:hover{
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2); 
 }
 
 /* Animacion Niebla */
@@ -55,6 +92,8 @@ nav li{
     100%{background-position: 0% bottom;}
 }
 
+/* Responsive */
+
 @media (max-width: 600px) {
     .main-div{
         width: 100%;
@@ -65,5 +104,9 @@ nav li{
     }
     .main{
         background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/rivendawnresponsive2.jpg');
+    }
+    .main3{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/riven_centinela_responsive.jpg');
+        height: 100%;
     }
 }

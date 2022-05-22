@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="main2">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand logo-title" href="#"><i class="fas fa-gamepad"></i> Buffed-Riven</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <!-- <li class="nav-item">
+            <a class="nav-link" href="{% url 'cuentas' %}">Cuentas</a>
+            </li> -->
+            <li class="nav-item active">
+            <a class="nav-link" href="{% url 'login' %}">Iniciar Sesion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'registro' %}">Registrate</a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+    <form class="formulario">
+        <div class="formulario-input">
+            <div class="text-center">
+                <h2 class="text-light">Iniciar Sesion</h2>
+            </div>
+            <br>
+            <div class="form-group">
+                <input class="form-control" autofocus type="text" placeholder="Nombre de usuario">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" placeholder="Contrasena">
+            </div>
+            <button class="btn btn-block btn-primary">iniciar sesion</button>
+            <br>
+            <div class="text-center">
+                <span class="text-light">¿No tienes una cuenta?</span>
+                <a href="{% url 'registro' %}">registrate</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
