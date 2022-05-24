@@ -1,0 +1,49 @@
+<div class="modulo_compra p-2">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Cuenta</th>
+                <th scope="col">Servidor</th>
+                <th scope="col">Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if request.session.carro.items %}
+            <input type="hidden" id="carro_compra" value="1">
+                {% for key, valor in request.session.carro.items %}
+                <tr>
+                    <td>{{ valor.tipo_cuenta }}</td>
+                    <td>{{ valor.servidor_cuenta }}</td>
+                    <td>
+                        <a href="{% url 'restarCuenta' valor.id_cuenta %}" class="badge badge-dark btn btn-dark">-</a>
+                        {{ valor.cantidad }}
+                        <a href="{% url 'agregarCuenta' valor.id_cuenta %}" class="badge badge-dark btn btn-dark">+</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="3">
+                    <div class="alert alert-danger text-center">
+                        No hay cuentas agregadas
+                    </div>
+                </td>
+            </tr>
+            {% endif %}
+            <tr>
+                <th scope="row">Total:</th>
+                <td colspan="2">${{ total_carro }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {% if request.session.carro.items %}
+    <div class="row">
+        <div class="col-lg-6">
+            <a href="{% url 'limpiarCuenta' %}" class="btn btn-block btn-danger">Vaciar Carro</a>
+        </div>
+        <div class="col-lg-6">
+            <button class="btn btn-primary btn-block">Pagar</button>
+        </div>
+    </div>
+    {% endif %}
+</div>

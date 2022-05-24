@@ -1,7 +1,6 @@
 *{
     font-family: 'Koulen', cursive;
 }
-
 .main{
     background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/rivendawn.jpg');
     height: 100vh;
@@ -9,12 +8,11 @@
     position: relative;
     padding: 20px;
 }
-.main2{
+body{
     background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/riven_pulsofuego.jpg');
-    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
-    position: relative;
-    padding: 20px;
 }
 .main3{
     background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/riven_centinel.jpg');
@@ -73,7 +71,16 @@ nav li{
     position: absolute;
     bottom: 10px;
 }
-
+.card_imagen{
+    width: 100% !important;
+}
+.card-fondo{
+    background-color: #040f2176 !important;
+}
+.warning{
+    background-color: #f0ac4ea2;
+    border-radius: 10px;
+}
 /* Animacion Niebla */
 
 .fog-anim{
@@ -109,7 +116,7 @@ nav li{
     .main{
         background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/rivendawnresponsive2.jpg');
     }
-    .main2{
+    body{
         background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/riven_pulso_responsive.jpg');
     }
     .main3{

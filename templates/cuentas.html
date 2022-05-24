@@ -1,0 +1,112 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="main2">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand logo-title" href="#"><i class="fas fa-gamepad"></i> Buffed-Riven</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'oro' %}">Cuentas <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    {% include 'carro_compra.html' %}
+                </div>
+            </li>
+        </ul>
+        </div>
+    </nav>
+    <div class="container-fluid pt-5 mt-5" id="unranked">
+        <div class="bg-dark text-center p-2">
+            <h2 class="text-light">Unranked</h2>
+        </div>
+        <div class="row pr-3 pl-3">
+            {% for c in cuenta_unranked %}
+            <div class="col-lg-4">
+                <div class="card text-center card-fondo mt-5">
+                    <div class="card_imagen">
+                        <img class="" src="{% static 'img/rangos/Unranked.png' %}" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-light">Servidor: {{ c.servidor.nombre_servidor }}</h5>
+                        <ul class="list-group card-fondo">
+                            <li class="list-group-item">Rango: {{ c.rango.nombre_rango }}</li>
+                            <li class="list-group-item">Esencia Azul: {{ c.escencia }}</li>
+                            <li class="list-group-item">Precio: ${{ c.rango.precio_cuenta }}</li>
+                        </ul>
+                        <br>
+                        <a href="{% url 'agregarCuenta' c.id %}" class="btn btn-warning">Agregar al Carro <i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container-fluid mt-5 pt-5" id="oro">
+        <div class="bg-warning text-center p-2">
+            <h2 class="text-light">Oro</h2>
+        </div>
+        <div class="row pr-3 pl-3">
+            {% for c in cuenta_oro %}
+            <div class="col-lg-3">
+                <div class="card text-center card-fondo mt-5">
+                    <div class="card_imagen">
+                        <img class="" src="{% static 'img/rangos/Oro.png' %}" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-light">Servidor: {{ c.servidor.nombre_servidor }}</h5>
+                        <ul class="list-group card-fondo">
+                            <li class="list-group-item">Rango: {{ c.rango.nombre_rango }}</li>
+                            <li class="list-group-item">Division: {{ c.division.numero_division }}</li>
+                            <li class="list-group-item">Precio: ${{ c.rango.precio_cuenta }}</li>
+                        </ul>
+                        <br>
+                        <a href="" class="btn btn-warning">Comprar <i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container-fluid mt-5 pt-5 pb-5" id="platino">
+        <div class="bg-info text-center p-2">
+            <h2 class="text-light">Platino</h2>
+        </div>
+        <div class="row pr-3 pl-3">
+            {% for c in cuenta_platino %}
+            <div class="col-lg-3">
+                <div class="card text-center card-fondo mt-5">
+                    <div class="card_imagen">
+                        <img class="" src="{% static 'img/rangos/Platino.png' %}" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-light">Servidor: {{ c.servidor.nombre_servidor }}</h5>
+                        <ul class="list-group card-fondo">
+                            <li class="list-group-item">Rango: {{ c.rango.nombre_rango }}</li>
+                            <li class="list-group-item">Division: {{ c.division.numero_division }}</li>
+                            <li class="list-group-item">Precio: ${{ c.rango.precio_cuenta }}</li>
+                        </ul>
+                        <br>
+                        <a href="" class="btn btn-warning">Comprar <i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
