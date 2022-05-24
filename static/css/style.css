@@ -124,3 +124,22 @@ nav li{
         height: 100%;
     }
 }
+@media (min-width: 601px) and (max-width: 900px) {
+    .main-div{
+        width: 100%;
+        text-align: center;
+    }
+    .main-text {
+        font-size: 95px;
+    }
+    .main{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/rivendawnresponsive2.jpg');
+    }
+    body{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/riven_pulso_responsive.jpg');
+    }
+    .main3{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.397),rgba(0, 0, 0, 0.397)), url('../img/riven_centinela_tablet.jpg');
+        height: 100%;
+    }
+}
