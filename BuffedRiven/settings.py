@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'apps.mail',
     'apps.base',
+    'apps.pago',
     'fontawesomefree',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -80,7 +81,7 @@ WSGI_APPLICATION = 'BuffedRiven.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'buffedrivenbd',
+        'NAME': 'postgres',
         'USER':'postgres',
         'PASSWORD': 'root',
         'HOST': '127.0.0.1',

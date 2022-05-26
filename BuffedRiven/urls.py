@@ -5,4 +5,5 @@ urlpatterns = [
     path('administrar/', admin.site.urls),
     path('', include('apps.base.urls')),
     path('mail/', include('apps.mail.urls')),
+    path('payments/', include('apps.pago.urls')),
 ]

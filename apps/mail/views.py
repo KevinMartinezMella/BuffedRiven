@@ -16,23 +16,23 @@ class Send(View):
         email = request.POST.get('email')
         carro = request.session["carro"]
         template = get_template('mail/mail-aprobado.html')
+        total = 0
+        cantidad = 0
         for key, valor in carro.items():
+            total = total + valor['acumulador']
+            cantidad = cantidad + valor['cantidad']
             context = {
                 'email': email,
                 'precio' : valor['acumulador'],
-                'servidor' : valor['servidor_cuenta'],
                 'tipo_cuenta' : valor['tipo_cuenta'],
                 'cantidad' : valor['cantidad'],
+                'total': total,
+                'cantidad_total' : cantidad
             }
             # Se renderiza el template y se envias parametros
             content = template.render(context)
-        print(carro)
             # Se crea el correo (titulo, mensaje, emisor, destinatario)
         msg = EmailMultiAlternatives('Gracias por tu compra','Comprobante de compra', settings.EMAIL_HOST_USER, [email])
 
         msg.attach_alternative(content, 'text/html')
-        if msg.send():
-            print('envio')
-        else:
-            print('no envio')
         return redirect('/')
