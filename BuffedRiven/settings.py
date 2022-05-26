@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'BuffedRiven.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'buffedrivenbd',
         'USER':'postgres',
         'PASSWORD': 'root',
         'HOST': '127.0.0.1',

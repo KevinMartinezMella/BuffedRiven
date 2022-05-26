@@ -4,7 +4,7 @@ import mercadopago
 
 def pago(request):
     if request.session['carro'] != {}:
-        sdk = mercadopago.SDK("ACCESS_TOKEN")
+        sdk = mercadopago.SDK("")
         carro = request.session["carro"]
         lista = []
         for key, valor in carro.items():
@@ -19,7 +19,7 @@ def pago(request):
         datos_preferencia = {
             "items": lista,
             "back_urls": {
-                "success": "https://www.success.com",
+                "success": "http://127.0.0.1:8000/payments/pago-aprobado",
                 "failure": "http://www.failure.com",
                 "pending": "http://www.pending.com"
             },
@@ -30,5 +30,25 @@ def pago(request):
         respuesta_preferencia = sdk.preference().create(datos_preferencia)
         preferencia = respuesta_preferencia["response"]
         return render(request, 'pago.html', {'preferencia' : preferencia})
+    else:
+        return redirect('/')
+
+
+def aprobado(request):
+    status = request.GET.get('status')
+    id_pago = request.GET.get('payment_id')
+    tipo_pago = request.GET.get('payment_type')
+    id_orden = request.GET.get('merchant_order_id')
+    if status:
+        if status == 'approved':
+            context = {
+                'status':status,
+                'id_pago':id_pago,
+                'tipo_pago':tipo_pago,
+                'id_orden':id_orden,
+            }
+            return render(request, 'pagos/pago-aprobado.html', context)
+        else:
+            return redirect('/')
     else:
         return redirect('/')

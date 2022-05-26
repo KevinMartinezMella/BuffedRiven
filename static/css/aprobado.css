@@ -1,0 +1,27 @@
+*{
+    font-family: 'Koulen', cursive;
+}
+.content {
+    position: absolute;
+    width: 70%;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+.header-text{
+    background-color: rgba(0, 0, 0, 0.438);
+}
+img{
+    width: 150px;
+    border-radius: 100%;
+    box-shadow: 1px 1px 5px;
+}
+.grey{
+    background-color: #5f6163;
+}
+@media (max-width: 600px) {
+    .content{
+        width: 95%;
+    }
+}
