@@ -62,6 +62,7 @@ class Cuenta(models.Model):
     password = models.CharField(max_length = 70, null = False)
     nivel = models.IntegerField(null = False)
     escencia = models.IntegerField(null = True)
+    estado_venta = models.IntegerField(null = True, default=0)
     rango = models.ForeignKey(Rango, on_delete = models.PROTECT)
     division = models.ForeignKey(Division, null = True, on_delete = models.PROTECT)
     servidor = models.ForeignKey(Servidor, on_delete = models.PROTECT)

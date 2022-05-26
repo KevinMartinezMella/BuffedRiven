@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 import mercadopago
 
@@ -66,6 +65,7 @@ def rechazado(request):
     id_orden = request.GET.get('merchant_order_id')
     if status:
         if status == 'rejected':
+            del request.session['correo_usuario']
             context = {
                 'status':status,
                 'id_pago':id_pago,
