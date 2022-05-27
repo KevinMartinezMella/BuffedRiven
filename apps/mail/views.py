@@ -6,13 +6,7 @@ from django.core.mail import EmailMultiAlternatives
 
 
 class Send(View):
-    def get(request):
-        if request.session['carro'] != {}:
-            return render(request, 'mail/send.html')
-        else:
-            return redirect('/')
-    
-    def post(email, lista):
+    def envio_correo(email, lista):
         template = get_template('mail/mail-aprobado.html')
         context = {
             'email': email,

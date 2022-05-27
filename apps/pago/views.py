@@ -22,13 +22,11 @@ def pago(request):
                 'currency_id': 'CLP',
             }
             lista.append(context)
-        print(lista)
         datos_preferencia = {
             "items": lista,
             "back_urls": {
                 "success": "http://127.0.0.1:8000/payments/pago-aprobado",
                 "failure": "http://127.0.0.1:8000/payments/pago-rechazado",
-                "pending": "http://www.pending.com"
             },
             "auto_return": "approved",
             "binary_mode": True,
@@ -61,7 +59,7 @@ def aprobado(request):
                 query = Cuenta.objects.filter(rango = valor['id_tipo_cuenta'], servidor = valor['id_servidor_cuenta'], estado_venta = 0)[:valor['cantidad']]
                 for i in range(len(query)):
                     lista_query.append(query[i])
-            Send.post(correo, lista_query)
+            Send.envio_correo(correo, lista_query)
             return render(request, 'pagos/pago-aprobado.html', context)
         else:
             return redirect('/')
