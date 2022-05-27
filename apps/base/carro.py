@@ -14,8 +14,10 @@ class Carro:
         if str(cuenta.id) not in self.carro.keys():
             self.carro[cuenta.id] = {
                 'id_cuenta' : cuenta.id,
+                'id_tipo_cuenta' : cuenta.rango_id,
                 'tipo_cuenta' : cuenta.rango.nombre_rango,
                 'servidor_cuenta' : cuenta.servidor.nombre_servidor,
+                'id_servidor_cuenta' : cuenta.servidor_id,
                 'cantidad' : 1,
                 'precio': cuenta.rango.precio_cuenta.precio,
                 'acumulador' : cuenta.rango.precio_cuenta.precio,

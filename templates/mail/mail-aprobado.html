@@ -7,7 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    {{ cantidad_total }} cuentas {{ tipo_cuenta }}
-    Total: {{ total }}
+    {% for cont in contenido %}
+    Cuenta: {{ cont }}
+    <br>
+    {% endfor %}
 </body>
 </html>

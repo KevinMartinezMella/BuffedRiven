@@ -6,9 +6,9 @@ def index(request):
     return render(request, 'index.html')
 
 def gold(request):
-    cuenta_platino = Cuenta.objects.filter(rango = 6)
-    cuenta_oro = Cuenta.objects.filter(rango = 5)
-    cuenta_unranked = Cuenta.objects.filter(rango = 1)
+    cuenta_platino = Cuenta.objects.filter(rango = 3, estado_venta = 3)
+    cuenta_oro = Cuenta.objects.filter(rango = 2, estado_venta = 3)
+    cuenta_unranked = Cuenta.objects.filter(rango = 1, estado_venta = 3)
     context = {
         'cuenta_unranked': cuenta_unranked,
         'cuenta_oro' : cuenta_oro,

@@ -68,7 +68,7 @@ class Cuenta(models.Model):
     servidor = models.ForeignKey(Servidor, on_delete = models.PROTECT)
 
     def __str__(self):
-        return f'{self.nombre_usuario}'
+        return f'{self.nombre_usuario} - {self.password} - {self.servidor.nombre_servidor}'
 
     class Meta:
         db_table = 'cuenta'
